@@ -3,6 +3,7 @@ package imperative;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import static imperative.Main.Gender.*;
 
@@ -30,8 +31,12 @@ public class Main {
         }
 
         //declarative programming
+
+        //predicate is boolean-valued function with one argument
+        Predicate<Person> personPredicate = person -> person.gender.equals(FEMALE);
+
         people.stream()
-                .filter(person -> person.gender.equals(FEMALE))
+                .filter(personPredicate)
                 .forEach(System.out::println);
     }
 
