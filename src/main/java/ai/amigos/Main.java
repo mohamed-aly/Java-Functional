@@ -1,11 +1,11 @@
-package imperative;
+package ai.amigos;
 
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-import static imperative.Main.Gender.*;
+import static ai.amigos.Main.Gender.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -38,6 +38,10 @@ public class Main {
         people.stream()
                 .filter(personPredicate)
                 .forEach(System.out::println);
+    }
+
+    enum Gender{
+        MALE, FEMALE
     }
 
     static class Person{
@@ -74,9 +78,6 @@ public class Main {
         }
     }
 
-
-
-    enum Gender{
-        MALE, FEMALE
-    }
 }
+
+
